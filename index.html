@@ -1,425 +1,623 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Online Groceries Team</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <style type="text/css">
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Team</title>
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
 
 body {
-    background: #eee !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
+    color: #323232;
+    font-size: 15px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
 }
-
-.btn-primary:hover,
-.btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
-    box-shadow: none;
-    outline: none;
+.heading-title {
+    margin-bottom: 100px;
 }
-
-.btn-primary {
-    color: #fff;
-    background-color: #007b5e;
-    border-color: #007b5e;
-}
-
-section {
-    padding: 60px 0;
-}
-
-section .section-title {
+.text-center {
     text-align: center;
-    color: #007b5e;
-    margin-bottom: 50px;
+}
+.heading-title h3 {
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+.p-top-30 {
+    padding-top: 30px;
+}
+.half-txt {
+    width: 60%;
+    margin: 0 auto;
+    display: inline-block;
+    line-height: 25px;
+    color: #7e7e7e;
+}
+.text-uppercase {
     text-transform: uppercase;
 }
 
-#team .card {
-    border: none;
-    background: #ffffff;
+.team-member, .team-member .team-img {
+    position: relative;
 }
-
-.image-flip:hover .backside,
-.image-flip.hover .backside {
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    border-radius: .25rem;
+.team-member {
+    overflow: hidden;
 }
-
-.image-flip:hover .frontside,
-.image-flip.hover .frontside {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
-
-.mainflip {
-    -webkit-transition: 1s;
-    -webkit-transform-style: preserve-3d;
-    -ms-transition: 1s;
-    -moz-transition: 1s;
-    -moz-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transition: 1s;
-    transform-style: preserve-3d;
+.team-member, .team-member .team-img {
     position: relative;
 }
 
-.frontside {
-    position: relative;
-    -webkit-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    z-index: 2;
-    margin-bottom: 30px;
-}
-
-.backside {
+.team-hover {
     position: absolute;
     top: 0;
     left: 0;
-    background: white;
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-    -ms-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border: 20px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.90);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
-
-.frontside,
-.backside {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: 1s;
-    -webkit-transform-style: preserve-3d;
-    -moz-transition: 1s;
-    -moz-transform-style: preserve-3d;
-    -o-transition: 1s;
-    -o-transform-style: preserve-3d;
-    -ms-transition: 1s;
-    -ms-transform-style: preserve-3d;
-    transition: 1s;
-    transform-style: preserve-3d;
+.team-member:hover .team-hover .desk {
+    top: 35%;
 }
-
-.frontside .card,
-.backside .card {
-    min-height: 312px;
+.team-member:hover .team-hover, .team-member:hover .team-hover .desk, .team-member:hover .team-hover .s-link {
+    opacity: 1;
 }
-
-.backside .card a {
-    font-size: 18px;
-    color: #007b5e !important;
+.team-hover .desk {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+    -webkit-transition: all 0.3s 0.2s;
+    transition: all 0.3s 0.2s;
+    padding: 0 20px;
 }
-
-.frontside .card .card-title,
-.backside .card .card-title {
-    color: #007b5e !important;
+.desk, .desk h4, .team-hover .s-link a {
+    text-align: center;
+    color: #222;
 }
+.team-member:hover .team-hover .s-link {
+    bottom: 10%;
+}
+.team-member:hover .team-hover, .team-member:hover .team-hover .desk, .team-member:hover .team-hover .s-link {
+    opacity: 1;
+}
+.team-hover .s-link {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    -webkit-transform: translateY(45%);
+    -ms-transform: translateY(45%);
+    transform: translateY(45%);
+    -webkit-transition: all 0.3s 0.2s;
+    transition: all 0.3s 0.2s;
+    font-size: 35px;
+}
+.desk, .desk h4, .team-hover .s-link a {
+    text-align: center;
+    color: #222;
+}
+.team-member .s-link a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 16px;
+}
+.team-title {
+    position: static;
+    padding: 20px 0;
+    display: inline-block;
+    letter-spacing: 2px;
+    width: 100%;
+}
+.team-title h5 {
+    margin-bottom: 0px;
+    display: block;
+    text-transform: uppercase;
+}
+.team-title span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #a5a5a5;
+    letter-spacing: 1px;
+}
+ .desk p {
+    font-size: 13px;
+}
+  </style>
 
-.frontside .card .card-body img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-}    
-
-</style>
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<!-- Team -->
-<section id="team" class="pb-5">
-    <div class="container">
-        <h5 class="section-title h1">Meet the Online Groceries Team</h5>
-        <div class="row">
-            <!-- Team member -->
-            <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-                        <!-- Team member -->
-            <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-                        <!-- Team member -->
-           <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
 
-               <div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="heading-title text-center">
+        <h3 class="text-uppercase">Meet The Online Team </h3>
+        <p class="p-top-30 half-txt">The online team maintain and manage the DFS website - Hover over our pictures to find out what each of us do! </p>
+      </div>
 
-               <!-- Team member -->
-            <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="https://github.com/AlexProven/OnlineTeam/blob/master/paul.jpg?raw=true" alt="team member" class="img-responsive">
+          </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4> Here's what I do - </h4>
+              <p> Web Coding Genius</p>
+              <p> Issues with countdown display</p>
+              <p> Amplience Dynamic Content</p>
+              <p> Qubit Opentag</p>
+              <p> Contact Us Page Functionality</p>
+              <p> Content Page Amends</p>
             </div>
-            <!-- ./Team member -->
-                        <!-- Team member -->
-            <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="s-link">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
             </div>
-            <!-- ./Team member -->
-                        <!-- Team member -->
-            <div class="col-md-4 col-sm-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Pablo Carvacho</h4>
-                                    <p class="card-text">Loves long walks on the beach</p>
-                                    <p> Preferred Contact - Zoom</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Pablo</h4>
-                                    <div class="profile">
-                                    <h4> Responsibilities - </h4>
-                                    <p>- Leads the online team</p>
-                                    <p>- Online Business Operations</p>
-                                    <p>- Stuff</p>
-                                    <p>- More stuff</p>
-                                    <p>- Even more stuff</p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
+          </div>
         </div>
+        <div class="team-title">
+          <h5>Paul Brown - 01302 573758</h5>
+          <span>Front End Web Developer</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="https://github.com/AlexProven/OnlineTeam/blob/master/manisha.jpg?raw=true" class="img-responsive">
+            </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4> Here's what I do - </h4>
+              <p>Homepage carousel changes </p>
+              <p>Espot creation</p>
+              <p>Card list amends - image changes</p>
+              <p>Campaign assets</p>
+              <p>International content - design changes</p>
+              <p>Exclusive brand carousel</p>
+              <p>Store locator images</p>
+            </div>
+            <div class="s-link">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Manisha Parmar - 01302 573218</h5>
+          <span>Senior Designer</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="team-member">
+          <div class="team-img">
+            <img src="https://github.com/AlexProven/OnlineTeam/blob/master/alex.jpg?raw=true" class="img-responsive">
+          </div>
+          <div class="team-hover">
+            <div class="desk">
+              <h4> Here's what I do - </h4>
+              <p>Lead in Digital Projects</p>
+              <p>Online Business Operations</p>
+              <p>Requirement and Specifications</p>
+              <p>Maintain & Improve the Website</p>
+              <p>Tech upgrades & Implementation</p>
+              <p>Technical Investigation</p>
+              <p>Incident Investigation</p>
+            </div>
+          </div>
+        </div>
+        <div class="team-title">
+          <h5>Alex Proven - 01302 573790</h5>
+          <span>Digital Delivery Executive</span>
+        </div>
+      </div>
     </div>
-</section>
-<!-- Team -->
-</body>
-</html>
+
+      <div class="row">
+
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://alexproven.github.io/OnlineTeam/wayne_machen.jpg" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>1st line Web Support</p>
+                <p>Daily Operational Tasks</p>
+                <p>General Web Queries</p>
+                <p>Online Testing</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Wayne Machan - 01302 572977</h5>
+            <span>Web Ops Support</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://github.com/AlexProven/OnlineTeam/blob/master/louise.jpg?raw=true" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>International product and site content</p>
+                <p>www.dfs-banken.nl</p>
+                <p>www.dfsspain.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Louise Brown - 01302 332980</h5>
+            <span>International Web Coordinator</span>
+          </div>
+        </div>
+    <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://github.com/AlexProven/OnlineTeam/blob/master/jas.jpg?raw=true" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>Website Checks</p>
+                <p>Trading & Campaign Support</p>
+                <p>Lister Sequencing</p>
+                <p>Optimising Internal Search Terms</p>
+                <p>Analytics Insight</p>
+                <p>A/B Testing</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Jas Lall - 01302 573764</h5>
+            <span>Online Optimisation & Analytics</span>
+          </div>
+        </div>
+      </div>
+        
+       <div class="row">
+
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://github.com/AlexProven/OnlineTeam/blob/master/heather.jpg?raw=true" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>Product Loader Queries</p>
+                <p>Product Details on site<p/>
+                <p>Digital Price Book</p>
+                <p>Marketing Messaging</p>
+                <p>Flashes on listers</p>
+                <p>Ecom Products Queries</p>
+                <p>**PLEASE NOTE - We handle pricing on the website only</p>
+                <p>(Retail/Order Build pricing queries should be directed to Stock & Price)**</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Heather Armstrong - 01302 332958</h5>
+            <span>Web Content Co-ordinator</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://alexproven.github.io/OnlineTeam/jill_lake.jpg" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                  <p>Product Loader Queries</p>
+                  <p>Product Details on site<p/>
+                  <p>Digital Price Book</p>
+                  <p>Marketing Messaging</p>
+                  <p>Flashes on listers</p>
+                  <p>Ecom Products Queries</p>
+                  <p>**PLEASE NOTE - We handle pricing on the website only</p>
+                  <p>(Retail/Order Build pricing queries should be directed to Stock & Price)**</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Jill Lake - 01302 573390</h5>
+            <span>Online Product Manager</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://github.com/AlexProven/OnlineTeam/blob/master/simon.jpg?raw=true" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+              <p>Maintain & Improve the Website</p>
+              <p>Tech upgrades & Implementation</p>
+              <p>Lead in Digital Projects</p>
+              <p>Lead in Online Busines Ops</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Simon Donovan - 01302 573398</h5>
+            <span>Web Ops Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://alexproven.github.io/OnlineTeam/linzi_jenkins.jpg" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>Homepage carousel changes </p>
+                <p>Content articles </p>
+                <p>Buying guides</p>
+                <p>Espot creation</p>
+                <p>Exclusive brands content</p>
+                <p>Campaign assets - Countdowns</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Linzi Jenkins - 01302 573991</h5>
+            <span>Online Design & CX Manager</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://alexproven.github.io/OnlineTeam/nicola_winder.jpg" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>Content updates to FAQ's</p>
+                <p>Issues with the Contact Us page</p>
+                <p>DFS Gallery (Olapic)</p>
+                <p>Store Locator/Directory updates</p>
+                <p>Promotional vouchers on web</p>
+                <p>Pricing errors on inspirational content</p>
+              </div>
+              <div class="s-link">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Nicola Winder - 01302 573328</h5>
+            <span>Online Content Manager</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="https://github.com/AlexProven/OnlineTeam/blob/master/erica.jpg?raw=true" alt="team member" class="img-responsive">
+            </div>
+            <div class="team-hover">
+              <div class="desk">
+                <h4> Here's what I do - </h4>
+                <p>Render process</p>
+                <p>Any website image issues</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-title">
+            <h5>Erica Calladine -  01302 332922</h5>
+            <span>Studio Manager</span>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://github.com/AlexProven/OnlineTeam/blob/master/no_user_photo.jpg?raw=true" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Product Loader Queries</p>
+                  <p>Product Details on site<p/>
+                  <p>Digital Price Book</p>
+                  <p>Marketing Messaging</p>
+                  <p>Flashes on listers</p>
+                  <p>Ecom Products Queries</p>
+                  <p>**PLEASE NOTE - We handle pricing on the website only</p>
+                  <p>(Retail/Order Build pricing queries should be directed to Stock & Price)**</p>
+                </div>
+                <div class="s-link">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>Amy Howells - 01302 332915</h5>
+              <span>Online Content Co-Ordinator</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://github.com/AlexProven/OnlineTeam/blob/master/ella_davies.jpg?raw=true" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Photography cut-outs, quality control</p>
+                  <p>Colour issues of product</p>
+                  <p>Amplience uploading of images </p>
+                  <p>Line drawings </p>
+                  <p>Campaign photography schedule</p>
+                  <p>Removal of images from the site</p>
+                </div>
+                <div class="s-link">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>Ella Davies - 01302 573323</h5>
+              <span>Online Artworker</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://github.com/AlexProven/OnlineTeam/blob/master/no_user_photo.jpg?raw=true" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Photography cut-outs</p>
+                  <p>Scanning of all fabrics/leathers for swatches</p>
+                  <p>Colour correction</p>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>Tom Mullins - 01302 332959 </h5>
+              <span>Studio Artworker</span>
+            </div>
+          </div>
+        </div>
+            
+    <div class="row">
+
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://github.com/AlexProven/OnlineTeam/blob/master/alex_parkin.jpg?raw=true" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Photography</p>
+                  <p>Dropins</p>
+                  <p>Sign off photography</p>
+                  <p>Portrait images of Managers</p>
+                </div>
+                <div class="s-link">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>Alex Parkins - 01302 334453</h5>
+              <span>Photographer</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://github.com/AlexProven/OnlineTeam/blob/master/James_Vernon.jpg?raw=true" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Big Boss Man</p>
+                  <p>Make Tea & Coffee</p>
+                  <p>Crack the Whip</p>
+                </div>
+                <div class="s-link">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>James Vernon</h5>
+              <span>Head of Online</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="https://alexproven.github.io/OnlineTeam/claire_lee.jpg" alt="team member" class="img-responsive">
+              </div>
+              <div class="team-hover">
+                <div class="desk">
+                  <h4> Here's what I do - </h4>
+                  <p>Photography cut-outs</p>
+                  <p>Colour checking of all product images</p>
+                  <p>Retouching of lifestyle images</p>
+                  <p>Drop ins</p>
+                </div>
+              </div>
+            </div>
+            <div class="team-title">
+              <h5>Claire Lee</h5>
+              <span>Freelancer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+        </body>
+        </html>
