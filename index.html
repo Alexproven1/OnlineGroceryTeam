@@ -78,7 +78,7 @@ section .section-title {
 }
 
 .frontside {
-    position: relative;
+    position: absolute;
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     z-index: 2;
@@ -86,7 +86,7 @@ section .section-title {
 }
 
 .backside {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     background: white;
@@ -121,6 +121,7 @@ section .section-title {
 .frontside .card,
 .backside .card {
     min-height: 312px;
+    min-width:  350px;
 }
 
 .backside .card a {
